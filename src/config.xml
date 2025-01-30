@@ -5,11 +5,11 @@
         <!-- Commento associato al "rung" -->
         <comment>Questo è un commento</comment>
         <!-- Prefisso del "rung" -->
-        <Prefisso>Prefisso1</Prefisso>
+        <Prefisso>XIO(Loc_GLOBAL_Fault)</Prefisso>
         <!-- Tipo e valore della ripetizione del "rung" -->
-        <Ripetizione tipo="serie">Ripetizione1</Ripetizione>
+        <Ripetizione tipo="serie">[XIC(MODULO.FBK.AlmOk) ,XIC(MODULO.FBK.Module_disabled) XIO(MODULO.FBK.ModeManual) ]</Ripetizione>
         <!-- Suffisso del "rung" -->
-        <Suffisso>Suffisso1</Suffisso>
+        <Suffisso>OTE(GLOBAL.FBK.MOD.AlmOk)</Suffisso>
     </rung>
     <rung>
         <comment>Un altro commento</comment>
