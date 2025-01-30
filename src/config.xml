@@ -1,0 +1,20 @@
+<!-- Configurazione principale del file XML -->
+<config>
+    <!-- Definizione di un "rung" -->
+    <rung>
+        <!-- Commento associato al "rung" -->
+        <comment>Questo è un commento</comment>
+        <!-- Prefisso del "rung" -->
+        <Prefisso>Prefisso1</Prefisso>
+        <!-- Tipo e valore della ripetizione del "rung" -->
+        <Ripetizione tipo="serie">Ripetizione1</Ripetizione>
+        <!-- Suffisso del "rung" -->
+        <Suffisso>Suffisso1</Suffisso>
+    </rung>
+    <rung>
+        <comment>Un altro commento</comment>
+        <Prefisso>Prefisso2</Prefisso>
+        <Ripetizione tipo="parallelo">Ripetizione2</Ripetizione>
+        <Suffisso>Suffisso2</Suffisso>
+    </rung>
+</config>
