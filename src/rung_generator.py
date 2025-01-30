@@ -18,8 +18,8 @@ def single_rung_creation(rung, module_names):
     
     # Concatena ogni module_name con ripetizione
     for module_name in module_names:
-        str = rung['ripetizione'].replace("MODULO", module_name)
-        result += f"{str}"
+        str_ripetizione = rung['ripetizione'].replace("MODULO", module_name)
+        result += f"{str_ripetizione}"
     
     # Concatena il suffisso
     result += f"{rung['suffisso']}"
