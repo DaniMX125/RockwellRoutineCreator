@@ -1,4 +1,5 @@
 import os
+import sys
 import gestione_xml as gx
 import rung_generator as rg
 import gestione_l5x as gl
@@ -14,10 +15,19 @@ def main():
      
     # Cartella dei file XML
     # Ottieni il percorso della directory corrente
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Ottieni il percorso della directory dell'eseguibile
+    if getattr(sys, 'frozen', False):
+        # Se il programma è stato congelato con PyInstaller
+        current_dir = os.path.dirname(sys.executable)
+    else:
+        # Se il programma è in esecuzione come script Python
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+    #print(f"Directory corrente: {current_dir}")
+    
     # Costruisci il percorso relativo alla cartella ConfigFiles e OutputFiles
-    config_dir = os.path.join(current_dir, '../ConfigFiles')
-    output_dir = os.path.join(current_dir, '../OutputFiles')
+    config_dir = os.path.join(current_dir, 'ConfigFiles\\')
+    output_dir = os.path.join(current_dir, 'OutputFiles\\')
     # Elenca i file nella cartella ConfigFiles
     file_list = gx.elenca_file_nella_cartella(config_dir)
     # Permetti all'utente di selezionare un file
@@ -47,6 +57,8 @@ def main():
     #rung_string = rg.single_rung_creation(rungs[0], module_names)
     
     #print(gl.routine_l5x_rung(1, "Commento", "Testo"))
+    print(f"File creato: {file_output}")
+    input("Premi un tasto per uscire...")
     return
     #print(rung_string)
     
