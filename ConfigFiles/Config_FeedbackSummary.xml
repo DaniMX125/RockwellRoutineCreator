@@ -13,8 +13,8 @@
     </rung>
     <rung>
         <comment>Un altro commento</comment>
-        <Prefisso>Prefisso2</Prefisso>
-        <Ripetizione tipo="parallelo">Ripetizione2</Ripetizione>
-        <Suffisso>Suffisso2</Suffisso>
+        <Prefisso></Prefisso>
+        <Ripetizione tipo="parallelo">XIC(MODULO.FBK.Messages)</Ripetizione>
+        <Suffisso>OTE(GLOBAL.FBK.MOD.NotFatal_Faults)</Suffisso>
     </rung>
 </config>

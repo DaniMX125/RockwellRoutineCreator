@@ -32,7 +32,7 @@ class TestRungGenerator(unittest.TestCase):
               
         # Chiamata alla funzione e verifica del risultato
         result = single_rung_creation(rung, module_names)
-        print(result)
+        #print(result)
         self.assertEqual(result, expected_result)
 
 if __name__ == '__main__':
