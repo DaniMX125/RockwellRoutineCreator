@@ -38,19 +38,19 @@ def seleziona_file(file_list):
             print("Inserisci un numero valido.")
 
 ### @TO DELETE            
-def carica_file_selezionato(cartella, file_name):
-    """
-    Carica il file XML selezionato.
+# def carica_file_selezionato(cartella, file_name):
+#     """
+#     Carica il file XML selezionato.
 
-    Args:
-        cartella (str): Il percorso della cartella.
-        file_name (str): Il nome del file da caricare.
+#     Args:
+#         cartella (str): Il percorso della cartella.
+#         file_name (str): Il nome del file da caricare.
 
-    Returns:
-        ElementTree: L'albero XML del file caricato.
-    """
-    file_path = os.path.join(cartella, file_name)
-    return ET.parse(file_path)
+#     Returns:
+#         ElementTree: L'albero XML del file caricato.
+#     """
+#     file_path = os.path.join(cartella, file_name)
+#     return ET.parse(file_path)
           
 def leggi_config_xml(file_path):
     """
@@ -70,11 +70,11 @@ def leggi_config_xml(file_path):
     # Itera su ogni elemento "rung" nel file XML
     for rung in root.findall('rung'):
         # Estrae i valori degli attributi del "rung"
-        comment = rung.find('comment').text
-        prefisso = rung.find('Prefisso').text
-        ripetizione = rung.find('Ripetizione').text
-        ripetizione_tipo = rung.find('Ripetizione').get('tipo')
-        suffisso = rung.find('Suffisso').text
+        comment = rung.find('comment').text if rung.find('comment').text is not None else ""
+        prefisso = rung.find('Prefisso').text if rung.find('Prefisso').text is not None else ""
+        ripetizione = rung.find('Ripetizione').text if rung.find('Ripetizione').text is not None else ""
+        ripetizione_tipo = rung.find('Ripetizione').get('tipo') if rung.find('Ripetizione').text is not None else ""
+        suffisso = rung.find('Suffisso').text if rung.find('Suffisso').text is not None else ""
         
         # Aggiunge gli attributi del "rung" alla lista
         rungs.append({

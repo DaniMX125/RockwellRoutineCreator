@@ -46,7 +46,7 @@ def main():
     # Creazione del file l5x
     file_output = os.path.join(output_dir, file_output)
     with open(file_output, "w", encoding="utf-8") as f:
-        f.write(gl.routine_l5x_inizio())
+        f.write(gl.routine_l5x_inizio(file_selezionato.replace(".xml", "")))
         for i, rung in enumerate(rungs):
             rung_string = rg.single_rung_creation(rung, module_names)
             f.write(gl.routine_l5x_rung(i, rung['comment'], rung_string))

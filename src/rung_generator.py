@@ -20,16 +20,17 @@ def single_rung_creation(rung, module_names):
         result = f"{rung['prefisso']}"
     
     # Concatena ogni module_name con ripetizione
-    if rung['ripetizione_tipo'] == 'serie':
-        for module_name in module_names:
-            str_ripetizione = rung['ripetizione'].replace("MODULO", module_name)
-            result += f"{str_ripetizione}"
-    elif rung['ripetizione_tipo'] == 'parallelo':
-        result += f"["
-        for module_name in module_names:
-            str_ripetizione = rung['ripetizione'].replace("MODULO", module_name)
-            result += f"{str_ripetizione},"
-        result = result[:-1] + "]"
+    if rung['ripetizione_tipo'] != None and rung['ripetizione'] != None:
+        if rung['ripetizione_tipo'] == 'serie':
+            for module_name in module_names:
+                str_ripetizione = rung['ripetizione'].replace("MODULO", module_name)
+                result += f"{str_ripetizione}"
+        elif rung['ripetizione_tipo'] == 'parallelo':
+            result += f"["
+            for module_name in module_names:
+                str_ripetizione = rung['ripetizione'].replace("MODULO", module_name)
+                result += f"{str_ripetizione},"
+            result = result[:-1] + "]"
     
     # Concatena il suffisso
     if rung['suffisso'] != None:

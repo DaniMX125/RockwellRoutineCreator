@@ -7,9 +7,6 @@
 <Routine Use="Target" Name="GeneratedRoutine" Type="RLL">
 <RLLContent>
 <Rung Number="0" Type="N">
-<Comment>
-<![CDATA[Questo è un commento]]>
-</Comment>
 <Text>
 <![CDATA[XIO(Loc_GLOBAL_Fault)[XIC(MOD1.FBK.AlmOk) ,XIC(MOD1.FBK.Module_disabled) XIO(MOD1.FBK.ModeManual) ][XIC(MOD2.FBK.AlmOk) ,XIC(MOD2.FBK.Module_disabled) XIO(MOD2.FBK.ModeManual) ]OTE(GLOBAL.FBK.MOD.AlmOk);]]>
 </Text>

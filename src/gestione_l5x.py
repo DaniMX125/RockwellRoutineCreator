@@ -1,5 +1,5 @@
 
-def routine_l5x_inizio():
+def routine_l5x_inizio(file_selezionato):
     '''
     Questa funzione ritorna l'inizio della routine l5x
     '''
@@ -9,7 +9,7 @@ def routine_l5x_inizio():
 <Programs Use="Context">
 <Program Use="Context">
 <Routines Use="Context">
-<Routine Use="Target" Name="GeneratedRoutine" Type="RLL">
+<Routine Use="Target" Name="{file_selezionato}" Type="RLL">
 <RLLContent>\n'''
     return string_inizio   
 
@@ -33,8 +33,12 @@ def routine_l5x_rung(rung_number, rung_comment, rung_text):
     Questa funzione ritorna una rung l5x
     '''
     string_result = f'''<Rung Number="{rung_number}" Type="N">\n'''
-    string_comment = f'''<Comment>\n<![CDATA[{rung_comment}]]>\n</Comment>\n'''
-    string_text = f'''<Text>\n<![CDATA[{rung_text};]]>\n</Text>\n'''
-    string_result += string_comment + string_text + '''</Rung>\n'''
+    string_comment = f'''<Comment>\n<![CDATA[{rung_comment}]]>\n</Comment>\n''' if rung_comment != "" and rung_comment!= None else ""
+    string_text = f'''<Text>\n<![CDATA[{rung_text};]]>\n</Text>\n''' if rung_text != "" else ""
+    
+    if string_comment != "" :
+        string_result += string_comment
+    
+    string_result += string_text + '''</Rung>\n'''    
 
     return string_result

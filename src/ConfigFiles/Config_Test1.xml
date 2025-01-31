@@ -3,7 +3,7 @@
     <!-- Definizione di un "rung" -->
     <rung>
         <!-- Commento associato al "rung" -->
-        <comment>Questo è un commento</comment>
+        <comment></comment>
         <!-- Prefisso del "rung" -->
         <Prefisso>XIO(Loc_GLOBAL_Fault)</Prefisso>
         <!-- Tipo e valore della ripetizione del "rung" -->
