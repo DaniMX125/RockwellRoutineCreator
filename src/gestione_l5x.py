@@ -10,7 +10,7 @@ def routine_l5x_inizio():
 <Program Use="Context">
 <Routines Use="Context">
 <Routine Use="Target" Name="GeneratedRoutine" Type="RLL">
-<RLLContent>'''
+<RLLContent>\n'''
     return string_inizio   
 
 

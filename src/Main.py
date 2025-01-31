@@ -1,4 +1,5 @@
-from gestione_xml import leggi_config_xml
+import os
+import gestione_xml as gx
 import rung_generator as rg
 import gestione_l5x as gl
 
@@ -10,14 +11,31 @@ def main():
     for i in range(int(module_number)):
         module_names.append(input(f"Nome del modulo {i+1}: ").strip())
         #print(f"Modulo {i+1}")
-        
+     
+    # Cartella dei file XML
+    # Ottieni il percorso della directory corrente
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Costruisci il percorso relativo alla cartella ConfigFiles e OutputFiles
+    config_dir = os.path.join(current_dir, '../ConfigFiles')
+    output_dir = os.path.join(current_dir, '../OutputFiles')
+    # Elenca i file nella cartella ConfigFiles
+    file_list = gx.elenca_file_nella_cartella(config_dir)
+    # Permetti all'utente di selezionare un file
+    file_selezionato = gx.seleziona_file(file_list)
+    file_output = file_selezionato.replace(".xml", ".l5x").replace("Config", "Output")  
+          
+    # Leggi il contenuto del file XML
+    rungs = gx.leggi_config_xml(os.path.join(config_dir, file_selezionato))
+    
     # Esempio di utilizzo
-    file_path = 'c:/Users/Administrator/Documents/Progetti/Python/RockwellRoutineCreator/src/config.xml'
-    rungs = leggi_config_xml(file_path)
+    #file_path = 'c:/Users/Administrator/Documents/Progetti/Python/RockwellRoutineCreator/src/config.xml'
+    #rungs = leggi_config_xml(file_path)
     # for rung in rungs:
     #     print(rung)
     
-    with open("output.l5x", "w", encoding="utf-8") as f:
+    # Creazione del file l5x
+    file_output = os.path.join(output_dir, file_output)
+    with open(file_output, "w", encoding="utf-8") as f:
         f.write(gl.routine_l5x_inizio())
         for i, rung in enumerate(rungs):
             rung_string = rg.single_rung_creation(rung, module_names)
