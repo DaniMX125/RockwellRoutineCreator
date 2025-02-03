@@ -45,7 +45,8 @@ def main():
     
     # Creazione del file l5x
     file_output = os.path.join(output_dir, file_output)
-    routine_name = file_selezionato.replace(".xml", "").lstrip("Config_")
+    #routine_name = file_selezionato.replace(".xml", "").lstrip("Config_")
+    routine_name = file_selezionato[len("Config_"):].replace(".xml", "")
     with open(file_output, "w", encoding="utf-8") as f:
         f.write(gl.routine_l5x_inizio(routine_name))
         for i, rung in enumerate(rungs):

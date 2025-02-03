@@ -1,0 +1,20 @@
+<!-- Configurazione principale del file XML -->
+<config>
+    <!-- Definizione di un "rung" -->
+    <rung>
+        <!-- Commento associato al "rung" -->
+        <comment></comment>
+        <!-- Prefisso del "rung" -->
+        <Prefisso>XIO(Loc_GLOBAL_Fault)</Prefisso>
+        <!-- Tipo e valore della ripetizione del "rung" -->
+        <Ripetizione tipo="serie">[XIC(MODULO.FBK.AlmOk) ,XIC(MODULO.FBK.Module_disabled) XIO(MODULO.FBK.ModeManual) ]</Ripetizione>
+        <!-- Suffisso del "rung" -->
+        <Suffisso>OTE(GLOBAL.FBK.MOD.AlmOk)</Suffisso>
+    </rung>
+    <rung>
+        <comment>Un altro commento</comment>
+        <Prefisso></Prefisso>
+        <Ripetizione tipo="parallelo">XIC(MODULO.FBK.Messages)</Ripetizione>
+        <Suffisso>OTE(GLOBAL.FBK.MOD.NotFatal_Faults)</Suffisso>
+    </rung>
+</config>
